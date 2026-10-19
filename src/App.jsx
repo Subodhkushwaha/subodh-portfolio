@@ -43,42 +43,97 @@ function Hero() {
   const k = (t) => <span className="k">{t}</span>
   const s = (t) => <span className="s">{t}</span>
   const n = (t) => <span className="n">{t}</span>
+
   return (
     <section className="hero">
       <div className="wrap hero-grid">
         <div>
-          <span className="status"><span className="dot" />Open to internships and entry-level roles</span>
+          <span className="status">
+            <span className="dot" />
+            Open to internships and entry-level roles
+          </span>
+
           <h1>{profile.name}</h1>
-          <p className="role">{profile.role}</p>
+
+          <p className="role">Java Full Stack Developer</p>
+
           <p className="lead">{profile.intro}</p>
+
           <div className="cta">
-            <a className="btn primary" href="#projects">See my projects</a>
-            <a className="btn" href={profile.liveErp} target="_blank" rel="noopener noreferrer">Live ERP demo</a>
-            <a className="btn" href={`mailto:${profile.email}`}>Email me</a>
+            <a className="btn primary" href="#projects">
+              See my projects
+            </a>
+
+            <a
+              className="btn"
+              href={profile.liveErp}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live ERP Demo
+            </a>
+
+            <a className="btn" href={`mailto:${profile.email}`}>
+              Email me
+            </a>
           </div>
         </div>
 
-        <div className="code" aria-label="Sample API response describing Subodh">
+        <div
+          className="code"
+          aria-label="Sample API response describing Subodh"
+        >
           <div className="code-bar">
-            <b>GET</b> /api/developers/subodh <span style={{ marginLeft: 'auto' }}>200 OK</span>
+            <b>GET</b> /api/developers/subodh
+            <span style={{ marginLeft: "auto" }}>200 OK</span>
           </div>
+
           <pre>
             <Ln delay={0.2}>{'{'}</Ln>
-            <Ln delay={0.5}>{'  '}{k('"name"')}: {s('"Subodh Kushwaha"')},</Ln>
-            <Ln delay={0.8}>{'  '}{k('"role"')}: {s('"Java Backend Developer"')},</Ln>
-            <Ln delay={1.1}>{'  '}{k('"stack"')}: [{s('"Spring Boot"')}, {s('"Hibernate"')}, {s('"MySQL"')}],</Ln>
-            <Ln delay={1.4}>{'  '}{k('"security"')}: [{s('"JWT"')}, {s('"RBAC"')}],</Ln>
-            <Ln delay={1.7}>{'  '}{k('"deployed"')}: [{s('"Vercel"')}, {s('"Docker"')}],</Ln>
-            <Ln delay={2.0}>{'  '}{k('"dsaProblemsSolved"')}: {n('400')},</Ln>
-            <Ln delay={2.3}>{'  '}{k('"location"')}: {s('"Ghaziabad, India"')},</Ln>
-            <Ln delay={2.6}>{'  '}{k('"available"')}: {n('true')}</Ln>
-            <Ln delay={2.9}>{'}'}</Ln>
+            <Ln delay={0.5}>
+              {'  '}{k('"name"')}: {s('"Subodh Kushwaha"')},
+            </Ln>
+            <Ln delay={0.8}>
+              {'  '}{k('"role"')}: {s('"Java Full Stack Developer"')},
+            </Ln>
+            <Ln delay={1.1}>
+              {'  '}{k('"backend"')}: [
+              {s('"Java"')}, {s('"Spring Boot"')},
+              {s('"Hibernate"')}],
+            </Ln>
+            <Ln delay={1.4}>
+              {'  '}{k('"frontend"')}: [
+              {s('"HTML"')}, {s('"CSS"')},
+              {s('"JavaScript"')}],
+            </Ln>
+            <Ln delay={1.7}>
+              {'  '}{k('"database"')}: [
+              {s('"MySQL"')}, {s('"PostgreSQL"')}],
+            </Ln>
+            <Ln delay={2.0}>
+              {'  '}{k('"security"')}: [
+              {s('"JWT"')}, {s('"RBAC"')}],
+            </Ln>
+            <Ln delay={2.3}>
+              {'  '}{k('"tools"')}: [
+              {s('"Git"')}, {s('"Docker"')},
+              {s('"Postman"')}],
+            </Ln>
+            <Ln delay={2.6}>
+              {'  '}{k('"deployment"')}: [
+              {s('"Vercel"')}, {s('"Railway"')}],
+            </Ln>
+            <Ln delay={2.9}>
+              {'  '}{k('"available"')}: {n('true')}
+            </Ln>
+            <Ln delay={3.2}>{'}'}</Ln>
           </pre>
         </div>
       </div>
     </section>
   )
 }
+
 
 function Stats() {
   return (
@@ -93,11 +148,30 @@ function Stats() {
 }
 
 function About() {
+  const about = [
+    "I am a B.Tech Computer Science student and Java Full Stack Developer passionate about building scalable, secure, and user-friendly web applications.",
+
+    "My backend expertise includes Java, Spring Boot, Spring Security, Hibernate, REST APIs, JWT authentication, and role-based authorization. I also work with SQL databases such as MySQL and PostgreSQL.",
+
+    "On the frontend, I use HTML, CSS, and JavaScript to build responsive and interactive user interfaces. I enjoy connecting frontend applications with backend services to deliver complete solutions.",
+
+    "I have worked on projects like CampusHQ School ERP and e-commerce applications, gaining practical experience in database integration, authentication, API development, and deployment.",
+
+    "I am continuously improving my Data Structures and Algorithms, problem-solving, and software development skills while looking for internship and entry-level opportunities."
+  ]
+
   return (
     <section id="about">
       <div className="wrap about">
-        <h2>Backend-first, with the full picture in view</h2>
-        <div>{about.map((p, i) => <p key={i}><Rich text={p} /></p>)}</div>
+        <h2>Java Full Stack Developer | Building End-to-End Solutions</h2>
+
+        <div>
+          {about.map((p, i) => (
+            <p key={i}>
+              <Rich text={p} />
+            </p>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -201,7 +275,7 @@ function Contact() {
           <p>I'm looking for a Software Engineering internship or entry-level role. Send me a message and I'll reply quickly.</p>
           <div className="cta">
             <a className="btn primary" href={`mailto:${profile.email}`}>{profile.email}</a>
-            <a className="btn" href={profile.phoneHref}>{profile.phone}</a>
+            {/* <a className="btn" href={profile.phoneHref}>{profile.phone}</a> */}
           </div>
           <div className="cta" style={{ marginTop: 14 }}>
             {socials.map(([label, href]) => (
