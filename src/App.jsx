@@ -192,7 +192,7 @@ function Journey() {
 }
 
 function Contact() {
-  const socials = [['GitHub', profile.github], ['LinkedIn', profile.linkedin], ['LeetCode', profile.leetcode], ['GeeksforGeeks', profile.gfg]]
+  const socials = [['GitHub', 'https://github.com/Subodhkushwaha'], ['LinkedIn', 'https://www.linkedin.com/in/subodh-kushwaha-902a502a4/'], ['LeetCode', 'https://leetcode.com/u/subodhkushwaha36/'], ['GeeksforGeeks', 'https://www.geeksforgeeks.org/profile/subodhkusbcgc']]
   return (
     <section id="contact">
       <div className="wrap">
